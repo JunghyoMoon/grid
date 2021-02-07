@@ -1,0 +1,16 @@
+{
+  "name": "grid_gulp_practice",
+  "version": "1.0.0",
+  "description": "practice variouse things with gulp",
+  "main": "index.js",
+  "repository": "https://github.com/JunghyoMoon/grid.git",
+  "author": "JungHyoMoon <dsinhome70\n@gmail.com>",
+  "license": "MIT",
+  "scripts": {},
+  "devDependencies": {
+    "@babel/core": "^7.12.13",
+    "@babel/preset-env": "^7.12.13",
+    "@babel/register": "^7.12.13",
+    "gulp": "^4.0.2"
+  }
+}
