@@ -5,6 +5,7 @@ import sass from "gulp-sass";
 import autoprefixer from "gulp-autoprefixer";
 import minify from "gulp-csso";
 import img from "gulp-image";
+import bro from "gulp-bro";
 import babelify from "babelify";
 import uglify from "uglifyify";
 import autoPrefixer from "gulp-autoprefixer";
@@ -40,7 +41,20 @@ const style = () =>
         .pipe(minify())
         .pipe(gulp.dest(routes.scss.dest));
 
-const prepare = gulp.series([]);
+const js = () =>
+    gulp
+        .src(routes.js.src)
+        .pipe(
+            bro({
+                transform: [
+                    babelify.configure({ presets: ["@babel/preset-env"] }),
+                    ["uglifyify", { global: true }],
+                ],
+            })
+        )
+        .pipe(gulp.dest(routes.js.dest));
+
+const prepare = gulp.series([clean]);
 const assets = gulp.series([style]);
 const live = gulp.parallel([]);
 
