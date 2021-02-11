@@ -55,12 +55,16 @@ const js = () =>
         )
         .pipe(gulp.dest(routes.js.dest));
 
+const image = () =>
+    gulp.src(routes.img.src).pipe(img()).pipe(gulp.dest(routes.img.dest));
+
 const watch = () => {
     gulp.watch(routes.scss.watch, style);
     gulp.watch(routes.js.src, js);
+    // gulp.watch(routes.img.src, img);
 };
 
-const prepare = gulp.series([clean]);
+const prepare = gulp.series([clean, image]);
 const assets = gulp.series([style, js]);
 const live = gulp.parallel([liveServer, watch]);
 
