@@ -29,12 +29,15 @@ const routes = {
 
 const clean = () => del(["build"]);
 
+const liveServer = () =>
+    gulp.src("dest").pipe(server({ livereload: true, open: true }));
+
 const style = () =>
     gulp
         .src(routes.scss.src)
         .pipe(sass().on("error", sass.logError))
         .pipe(
-            autoPrefixer({
+            autoprefixer({
                 browsers: ["last 2 versions"],
             })
         )
@@ -55,7 +58,7 @@ const js = () =>
         .pipe(gulp.dest(routes.js.dest));
 
 const prepare = gulp.series([clean]);
-const assets = gulp.series([style]);
-const live = gulp.parallel([]);
+const assets = gulp.series([style, js]);
+const live = gulp.parallel([liveServer]);
 
 export const dev = gulp.series([prepare, assets, live]);
