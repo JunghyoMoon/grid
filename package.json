@@ -4,7 +4,7 @@
   "description": "practice variouse things with gulp",
   "main": "index.js",
   "repository": "https://github.com/JunghyoMoon/grid.git",
-  "author": "JungHyoMoon <dsinhome70\n@gmail.com>",
+  "author": "JungHyoMoon <dsinhome70@gmail.com>",
   "license": "MIT",
   "scripts": {
     "dev": "gulp dev",
@@ -26,5 +26,10 @@
     "node-sass": "^5.0.0",
     "uglifyify": "^5.0.2"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "browserslist": [
+    "defaults",
+    "not IE 11",
+    "maintained node versions"
+  ]
 }
