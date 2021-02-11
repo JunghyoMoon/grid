@@ -7,8 +7,6 @@ import minify from "gulp-csso";
 import img from "gulp-image";
 import bro from "gulp-bro";
 import babelify from "babelify";
-import uglify from "uglifyify";
-import autoPrefixer from "gulp-autoprefixer";
 
 const routes = {
     img: {
@@ -57,8 +55,13 @@ const js = () =>
         )
         .pipe(gulp.dest(routes.js.dest));
 
+const watch = () => {
+    gulp.watch(routes.scss.watch, style);
+    gulp.watch(routes.js.src, js);
+};
+
 const prepare = gulp.series([clean]);
 const assets = gulp.series([style, js]);
-const live = gulp.parallel([liveServer]);
+const live = gulp.parallel([liveServer, watch]);
 
 export const dev = gulp.series([prepare, assets, live]);
