@@ -26,6 +26,8 @@ const routes = {
     },
 };
 
+const clean = () => del(["build"]);
+
 const style = () =>
     gulp
         .src(routes.scss.src)
