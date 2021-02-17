@@ -15,6 +15,9 @@ const handleClick = (event) => {
     img.setAttribute("src", src);
     const closeBtn = document.createElement("button");
     closeBtn.innerText = "❌";
+    closeBtn.addEventListener("click", closeWindow);
+    bg.appendChild(img);
+    bg.appendChild(closeBtn);
 };
 
 const init = () => {
