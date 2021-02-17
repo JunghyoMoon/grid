@@ -1,6 +1,11 @@
 import { doc } from "./variables";
 
-const closeWindow = (event) => {};
+const closeWindow = (event) => {
+    const btn = event.target;
+    const window = btn.parentNode;
+    const body = window.parentNode;
+    body.removeChild(window);
+};
 
 const handleClick = (event) => {
     const target = event.target;
