@@ -1,3 +1,11 @@
-import { one } from "./calc";
+import doc from "./variables";
 
-console.log(one);
+const handleClick = () => {};
+
+const init = () => {
+    doc.items.forEach((item) => item.addEventListener("click", handleClick));
+};
+
+if (container) {
+    init();
+}
