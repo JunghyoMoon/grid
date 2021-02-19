@@ -18,6 +18,8 @@ const handleClick = (event) => {
     closeBtn.addEventListener("click", closeWindow);
     bg.appendChild(img);
     bg.appendChild(closeBtn);
+    bg.classList.add("modal");
+    body.appendChild(bg);
 };
 
 const init = () => {
