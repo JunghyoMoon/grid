@@ -4,7 +4,7 @@ const closeWindow = (event) => {
     const btn = event.target;
     const window = btn.parentNode;
     const body = window.parentNode;
-    body.removeChild(window);
+    doc.body.removeChild(window);
 };
 
 const handleClick = (event) => {
@@ -19,7 +19,7 @@ const handleClick = (event) => {
     bg.appendChild(img);
     bg.appendChild(closeBtn);
     bg.classList.add("modal");
-    body.appendChild(bg);
+    doc.body.appendChild(bg);
 };
 
 const init = () => {
