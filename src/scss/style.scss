@@ -13,12 +13,12 @@ body {
     .modal {
         position: absolute;
         width: 100%;
-        height: 100%;
+        height: 100vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        background-color: black transparent;
+        background-color: rgba(30, 39, 46, 0.9);
     }
 
     header {
